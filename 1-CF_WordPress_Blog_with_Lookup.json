@@ -736,7 +736,7 @@
             "Type": "AWS::AutoScaling::LaunchConfiguration",
             "DependsOn": "VPCGatewayAttachment",
             "Properties": {
-                "ImageId": "ami-97785bed",
+                "ImageId": "ami-0915bcb5fa77e4892",
                 "InstanceType": "t2.micro",
                 "SecurityGroups": [
                     {
@@ -754,7 +754,7 @@
                             [
                                 "#!/bin/bash\n",
                                 "yum update -y\n",
-                                "yum install -y httpd24 php70 mysql56-server php70-mysqlnd git\n",
+                                "yum install -y httpd php mysql-server php-mysqlnd git\n",
                                 "cd /var/www/html\n",
                                 "wget https://wordpress.org/latest.tar.gz\n",
                                 "tar -xzf latest.tar.gz\n",
@@ -813,7 +813,7 @@
             "Type": "AWS::EC2::Instance",
             "Properties": {
                 "InstanceType": "t2.micro",
-                "ImageId": "ami-97785bed",
+                "ImageId": "ami-0915bcb5fa77e4892",
                 "KeyName": {
                     "Ref": "WebServerKeyName"
                 },
